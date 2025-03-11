@@ -3,17 +3,15 @@ import Card from 'react-bootstrap/Card';
 import { TiTime } from "react-icons/ti";
 import { TiArrowLeftThick } from "react-icons/ti";
 
-function ArticleItem() {
+function ArticleItem(props) {
     return ( 
     <>
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://dl.next1code.ir/images/react/article1.webp" />
+    <Card >
+      <Card.Img variant="top" src={props.image} />
       <Card.Body>
-        <Card.Title className='py-2'>مقاله اول</Card.Title>
+        <Card.Title className='py-2'>{props.title}</Card.Title>
         <Card.Text>
-        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ 
-        و با استفاده از طراحان گرافیک است چاپگرها و
-         متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است 
+        {props.desc}
         </Card.Text>
         <span className='read-more'>
             <span>
@@ -22,8 +20,8 @@ function ArticleItem() {
         </span>
       </Card.Body>
       <Card.Footer className='d-flex justify-content-between align-items-center py-3'>
-        <span>نویسنده : سارا</span>
-        <span><TiTime /> 5 دقیقه </span>
+        <span>نویسنده : {props.writter}</span>
+        <span><TiTime /> {props.readingTime} دقیقه </span>
       </Card.Footer>
     </Card>
     </> 
