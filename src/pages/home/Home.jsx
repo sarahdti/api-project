@@ -1,3 +1,4 @@
+import ArticleItem from "../../components/article/ArticleItem";
 import MyNavebar from "../../components/navbar/MyNavbar";
 
 function Home() {
@@ -5,6 +6,7 @@ function Home() {
         <>
         <MyNavebar/>
         <h1>Home page</h1>
+        <ArticleItem/>
         </>
      );
 }

@@ -11,7 +11,7 @@ function MyNavebar() {
         <>
          <Navbar key={expand} expand={expand} style={{backgroundColor:'#17a2b8'}} className="mb-3">
           <Container>
-            <Navbar.Brand href="#">بلاگ برنامه نویسی</Navbar.Brand>
+            <Navbar.Brand className='lalezar fs-5' href="#">بلاگ برنامه نویسی</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
