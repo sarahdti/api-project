@@ -1,22 +1,18 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import MyNavbar from "./../../components/navbar/MyNavbar";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { BsPencilSquare } from "react-icons/bs";
-import { BiTimeFive , BiCategoryAlt } from "react-icons/bi";
-import { MdDelete , MdOutlineEditCalendar } from "react-icons/md";
+import { BiTimeFive, BiCategoryAlt } from "react-icons/bi";
+import { MdDelete, MdOutlineEditCalendar } from "react-icons/md";
 import Swal from "sweetalert2";
-import './Article.css'
-
-
-
-
+import "./Article.css";
 
 function Article() {
   const articleId = useParams().articleId;
   const [articleData, setArticleData] = useState({});
-  const navigate =useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -24,56 +20,69 @@ function Article() {
       .then((response) => setArticleData(response.data));
   }, []);
 
-  const deleteArticleHandler =(id)=>{
+  const deleteArticleHandler = (id) => {
     Swal.fire({
-        title: "آیا مقاله رو حذف کنم؟",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "آره حذف کن!",
-        cancelButtonText: "نه"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          Swal.fire({
-            title: "حذف شد!",
-            icon: "success"
-          });
-          axios.delete(`http://localhost:3000/articles/${id}`)
-          navigate('/')
-        }
-      });
-        // 
-  } 
+      title: "آیا مقاله رو حذف کنم؟",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "آره حذف کن!",
+      cancelButtonText: "نه",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "حذف شد!",
+          icon: "success",
+        });
+        axios.delete(`http://localhost:3000/articles/${id}`);
+        navigate("/");
+      }
+    });
+    //
+  };
+
+  
   return (
     <>
       <MyNavbar />
       <Container>
-        <Row style={{marginTop: '70px'}}>
+        <Row style={{ marginTop: "70px" }}>
           <Col lg={4}>
             <div className="articleCardContainer">
-                <div className="cardHeader">
-                    <img src={articleData.image} />
-                    <h4>{articleData.title}</h4>
-                </div>
-                <div className="cardBody">
-                    <p>
-                        <BsPencilSquare size='20px'/>
-                        نویسنده : <b>{articleData.writter}</b>
-                    </p>
-                    <p>
-                        <BiTimeFive size='20px'/>
-                        مدت زمان : <b>{articleData.readingTime} دقیقه</b>
-                    </p>
-                    <p>
-                        <BiCategoryAlt size='20px'/>
-                        دسته بندی : <b>{articleData.category}</b>
-                    </p>
-                </div>
-                <div className="cardFooter">
-                    <Button variant="outline-danger" onClick={()=>deleteArticleHandler(articleId)}><MdDelete size='25px'/>حذف مقاله</Button>
-                    <Button variant="outline-primary"><MdOutlineEditCalendar size='25px'/>ویرایش مقاله</Button>
-                </div>
+              <div className="cardHeader">
+                <img src={articleData.image} />
+                <h4>{articleData.title}</h4>
+              </div>
+              <div className="cardBody">
+                <p>
+                  <BsPencilSquare size="20px" />
+                  نویسنده : <b>{articleData.writter}</b>
+                </p>
+                <p>
+                  <BiTimeFive size="20px" />
+                  مدت زمان : <b>{articleData.readingTime} دقیقه</b>
+                </p>
+                <p>
+                  <BiCategoryAlt size="20px" />
+                  دسته بندی : <b>{articleData.category}</b>
+                </p>
+              </div>
+              <div className="cardFooter">
+                <Button
+                  variant="outline-danger"
+                  onClick={() => deleteArticleHandler(articleId)}
+                >
+                  <MdDelete size="25px" />
+                  حذف مقاله
+                </Button>
+                <Link to={`/edit-article/${articleId}`}>
+                <Button variant="outline-primary">
+                  <MdOutlineEditCalendar size="25px" />
+                  ویرایش مقاله
+                </Button>
+                </Link>
+              </div>
             </div>
           </Col>
           <Col lg={8}>
