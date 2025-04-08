@@ -2,6 +2,7 @@ import './ArticleItem.css'
 import Card from 'react-bootstrap/Card';
 import { TiTime } from "react-icons/ti";
 import { TiArrowLeftThick } from "react-icons/ti";
+import { Link } from 'react-router-dom';
 
 function ArticleItem(props) {
     return ( 
@@ -13,11 +14,13 @@ function ArticleItem(props) {
         <Card.Text>
         {props.desc}
         </Card.Text>
+        <Link to={`/article/${props.id}`}>
         <span className='read-more'>
             <span>
                 ادامه مقاله <TiArrowLeftThick size={'25px'} />
             </span>
         </span>
+        </Link>
       </Card.Body>
       <Card.Footer className='d-flex justify-content-between align-items-center py-3'>
         <span>نویسنده : {props.writter}</span>
