@@ -12,7 +12,7 @@ function Home() {
             setArticles(response.data)
         })
     },[])
-    console.log(articles)
+    
     return ( 
         <>
         <MyNavebar/>

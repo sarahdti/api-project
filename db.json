@@ -1,7 +1,7 @@
 {
-    "articles": [
+  "articles": [
     {
-      "id": 1,
+      "id": "1",
       "image": "https://dl.next1code.ir/images/react/article1.webp",
       "title": "عنوان مقاله اول",
       "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .",
@@ -10,7 +10,7 @@
       "readingTime": "5"
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "https://dl.next1code.ir/images/react/article2.webp",
       "title": "عنوان مقاله دوم",
       "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .",
@@ -19,7 +19,7 @@
       "readingTime": "11"
     },
     {
-      "id": 3,
+      "id": "3",
       "image": "https://dl.next1code.ir/images/react/article3.webp",
       "title": "عنوان مقاله سوم",
       "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .",
@@ -28,7 +28,7 @@
       "readingTime": "12"
     },
     {
-      "id": 4,
+      "id": "4",
       "image": "https://dl.next1code.ir/images/react/article4.webp",
       "title": "عنوان مقاله چهارم",
       "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .",
@@ -37,7 +37,7 @@
       "readingTime": "16"
     },
     {
-      "id": 5,
+      "id": "5",
       "image": "https://dl.next1code.ir/images/react/article5.webp",
       "title": "عنوان مقاله پنجم",
       "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .",
@@ -46,7 +46,7 @@
       "readingTime": "13"
     },
     {
-      "id": 6,
+      "id": "6",
       "image": "https://dl.next1code.ir/images/react/article6.webp",
       "title": "عنوان مقاله ششم",
       "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .",
@@ -55,7 +55,7 @@
       "readingTime": "15"
     },
     {
-      "id": 7,
+      "id": "7",
       "image": "https://dl.next1code.ir/images/react/article7.webp",
       "title": "عنوان مقاله هفتم",
       "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .",
@@ -64,14 +64,67 @@
       "readingTime": "20"
     },
     {
-      "id": 8,
+      "id": "8",
       "image": "https://dl.next1code.ir/images/react/article8.webp",
       "title": "عنوان مقاله هشتم",
       "desc": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است .",
       "writter": "عباس",
       "category": "رابط کاربری",
       "readingTime": "6"
+    },
+    {
+      "id": "8619",
+      "title": "Veniam molestiae te",
+      "desc": "Officia facere quod ",
+      "writter": "Magni non recusandae",
+      "category": "Modi omnis dolores r",
+      "img": "Quae proident sed f",
+      "time": "52"
+    },
+    {
+      "id": "2bc9",
+      "title": "Aute optio ducimus",
+      "desc": "Commodi et est est a",
+      "writter": "Porro dolor incidunt",
+      "category": "Perspiciatis duis t",
+      "img": "Quis expedita deleni",
+      "time": "48"
+    },
+    {
+      "id": "2e97",
+      "title": "مقاله 12",
+      "desc": "توضیح 12",
+      "writter": "علی",
+      "category": "پیدا کردن شغل",
+      "image": "https://dl.next1code.ir/images/react/article8.webp",
+      "timeReading": "15"
+    },
+    {
+      "id": "d3d0",
+      "title": "مقاله 10",
+      "desc": "توضیح 10",
+      "writter": "حسن",
+      "category": "web",
+      "image": "https://dl.next1code.ir/images/react/article8.webp",
+      "timeReading": "17"
+    },
+    {
+      "id": "cf74",
+      "title": "Tempora sit voluptas",
+      "desc": "Nisi impedit simili",
+      "writter": "Similique ad minima ",
+      "category": "Provident facilis v",
+      "image": "Rerum velit voluptat",
+      "timeReading": "66"
+    },
+    {
+      "id": "967e",
+      "title": "Est maiores tenetur ",
+      "desc": "Fugiat illum aut d",
+      "writter": "Cumque facere aut au",
+      "category": "Neque quibusdam accu",
+      "image": "Beatae eos velit u",
+      "timeReading": "37"
     }
   ]
 }
-
