@@ -8,7 +8,7 @@ import EditArticle from "./pages/editArticle/EditArticle";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/api-project">
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/about" element={<About/>} />
