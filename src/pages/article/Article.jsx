@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import MyNavbar from "./../../components/navbar/MyNavbar";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { BsPencilSquare } from "react-icons/bs";
 import { BiTimeFive , BiCategoryAlt } from "react-icons/bi";
 import { MdDelete , MdOutlineEditCalendar } from "react-icons/md";
+import Swal from "sweetalert2";
 import './Article.css'
 
 
@@ -15,12 +16,35 @@ import './Article.css'
 function Article() {
   const articleId = useParams().articleId;
   const [articleData, setArticleData] = useState({});
+  const navigate =useNavigate()
 
   useEffect(() => {
     axios
       .get(`http://localhost:3000/articles/${articleId}`)
       .then((response) => setArticleData(response.data));
   }, []);
+
+  const deleteArticleHandler =(id)=>{
+    Swal.fire({
+        title: "آیا مقاله رو حذف کنم؟",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "آره حذف کن!",
+        cancelButtonText: "نه"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "حذف شد!",
+            icon: "success"
+          });
+          axios.delete(`http://localhost:3000/articles/${id}`)
+          navigate('/')
+        }
+      });
+        // 
+  } 
   return (
     <>
       <MyNavbar />
@@ -47,7 +71,7 @@ function Article() {
                     </p>
                 </div>
                 <div className="cardFooter">
-                    <Button variant="outline-danger"><MdDelete size='25px'/>حذف مقاله</Button>
+                    <Button variant="outline-danger" onClick={()=>deleteArticleHandler(articleId)}><MdDelete size='25px'/>حذف مقاله</Button>
                     <Button variant="outline-primary"><MdOutlineEditCalendar size='25px'/>ویرایش مقاله</Button>
                 </div>
             </div>
