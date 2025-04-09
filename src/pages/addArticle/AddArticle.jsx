@@ -22,7 +22,7 @@ function AddArticle() {
     })
   }
   const addArticleHandler =()=>{
-    axios.post('http://localhost:3000/articles',formData)
+    axios.post('https://api1-9fi5.onrender.com/articles',formData)
     .then(Response=>{
       if(Response.status ===201){
         Swal.fire({

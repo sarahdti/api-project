@@ -12,11 +12,11 @@ function EditArticle() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/articles/${articleId}`)
+      .get(`https://api1-9fi5.onrender.com/articles/${articleId}`)
       .then((response) => setArticleData(response.data));
   }, []);
   const EditArticleHandler = ()=>{
-    axios.put(`http://localhost:3000/articles/${articleId}`,articleData)
+    axios.put(`https://api1-9fi5.onrender.com/articles/${articleId}`,articleData)
     Swal.fire({
         title:'مقاله با موفقیت ویرایش شد',
         icon:'success'

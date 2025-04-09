@@ -7,7 +7,7 @@ import axios from "axios";
 function Home() {
     const[articles, setArticles]=useState([])
     useEffect(()=>{
-        axios('http://localhost:3000/articles')
+        axios('https://api1-9fi5.onrender.com/articles')
         .then((response)=>{
             setArticles(response.data)
         })

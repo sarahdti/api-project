@@ -16,11 +16,11 @@ function Article() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/articles/${articleId}`)
+      .get(`https://api1-9fi5.onrender.com/articles/${articleId}`)
       .then((response) => setArticleData(response.data));
   }, []);
 
-  const deleteArticleHandler = (id) => {
+  const deleteArticleHandler = (articleId) => {
     Swal.fire({
       title: "آیا مقاله رو حذف کنم؟",
       icon: "warning",
@@ -35,10 +35,18 @@ function Article() {
           title: "حذف شد!",
           icon: "success",
         });
-        axios.delete(`http://localhost:3000/articles/${id}`);
-        navigate("/");
-      }
+        axios.delete(`https://api1-9fi5.onrender.com/articles/${articleId}`)
+  .then(() => {
+    navigate("/api-project/");
+  })
+  .catch(() => {
+    Swal.fire({
+      title: "حذف نشد!",
+      icon: "error",
     });
+  });
+
+  }});
     //
   };
 
@@ -61,7 +69,7 @@ function Article() {
                 </p>
                 <p>
                   <BiTimeFive size="20px" />
-                  مدت زمان : <b>{articleData.readingTime} دقیقه</b>
+                  مدت زمان : <b>{articleData.readingTime} </b>
                 </p>
                 <p>
                   <BiCategoryAlt size="20px" />
