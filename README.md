@@ -2,7 +2,7 @@
   <h1>📰 API Project</h1>
   <p>A simple and clean article management project using React, Axios, JSON Server, and more.</p>
   <p>
-    <a href="https://api-project-dti.netlify.app" target="_blank">
+    <a href="https://sarahdti.github.io/api-project/" target="_blank">
       🔗 <strong>Live Demo</strong>
     </a>
   </p>
