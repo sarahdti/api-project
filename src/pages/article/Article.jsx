@@ -37,7 +37,7 @@ function Article() {
         });
         axios.delete(`https://api1-9fi5.onrender.com/articles/${articleId}`)
   .then(() => {
-    navigate("/api-project/");
+    navigate("/");
   })
   .catch(() => {
     Swal.fire({

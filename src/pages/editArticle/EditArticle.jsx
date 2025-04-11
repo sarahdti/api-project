@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import MyNavebar from "../../components/navbar/MyNavbar";
 import { Button, Form } from "react-bootstrap";
 import './EditArticle.css'
@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 function EditArticle() {
   const articleId = useParams().articleId;
   const [articleData, setArticleData] = useState({});
-
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios
@@ -21,6 +21,7 @@ function EditArticle() {
         title:'مقاله با موفقیت ویرایش شد',
         icon:'success'
     })
+    navigate(`/article/${articleId}`)
   }
   const formHandler =(e)=>{
    setArticleData({...articleData,[e.target.name]: e.target.value})
